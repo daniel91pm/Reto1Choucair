@@ -1,0 +1,12 @@
+userinterface/ChoucairAcademyPage.java
+ userinterface.ChoucairAcademyPage
+tasks/OpenUp.java
+ tasks.OpenUp
+tasks/Search.java
+ tasks.Search
+userinterface/SearchCoursePage.java
+ userinterface.SearchCoursePage
+tasks/Login.java
+ tasks.Login
+userinterface/ChoucairLoginPage.java
+ userinterface.ChoucairLoginPage
