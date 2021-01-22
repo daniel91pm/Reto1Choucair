@@ -11,8 +11,10 @@ public class Answer implements Question<Boolean>{
     public Answer(String question){
         this.question = question;
     }
+
     public static Answer tothe(String question)
     {
+
         return new Answer(question);
     }
 
@@ -20,8 +22,8 @@ public class Answer implements Question<Boolean>{
     public Boolean answeredBy(Actor actor)
     {
         boolean result;
-        String nameCourse = Text.of(SearchCoursePage.TEXTO_CURSO).viewedBy(actor).asString();
-        if(question.equals(nameCourse))
+        String nameCourse = Text.of(SearchCoursePage.NOMBRE_CURSO_BUSQUEDA).viewedBy(actor).asString();
+        if(question.contains(nameCourse))
         {
             result = true;
         }else{

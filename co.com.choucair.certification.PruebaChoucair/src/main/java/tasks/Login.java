@@ -16,18 +16,28 @@ import java.util.concurrent.TimeUnit;
 
 public class Login implements Task {
     private ChoucairLoginPage choucairLoginPage;
+    private String strUser;
+    private String strPassword;
 
-    public static Login onThePage() {
-        return Tasks.instrumented(Login.class);
+    public Login(String strUser, String strPassword) {
+        this.strUser = strUser;
+        this.strPassword = strPassword;
+    }
+
+
+    public static Login onThePage(String strUser, String strPassword) {
+
+        return Tasks.instrumented(Login.class,strUser,strPassword);
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(WaitUntil.the(ChoucairLoginPage.LOGIN_BUTTON, WebElementStateMatchers.isVisible()),
                 Click.on(ChoucairLoginPage.LOGIN_BUTTON),
-                Enter.theValue("1037616175").into(ChoucairLoginPage.USER_FIELD),
-                Enter.theValue("Choucair2021*").into(ChoucairLoginPage.PASSWORD_FIELD),
+                Enter.theValue(strUser).into(ChoucairLoginPage.USER_FIELD),
+                Enter.theValue(strPassword).into(ChoucairLoginPage.PASSWORD_FIELD),
                 Click.on(ChoucairLoginPage.SIGNIN_BUTTON)
         );
     }
 }
+
