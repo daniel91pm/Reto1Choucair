@@ -1,10 +1,9 @@
 package userinterface;
 
-import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;
 
-public class SearchCoursePage extends PageObject {
+public class SearchCoursePage {
     public static final Target IMAGEN_CERTIFICACIONES = Target.the("Image that represents Choucair Courses")
             .located(By.id("certificaciones"));
     public static final Target TEXTO_CURSO = Target.the("Identify Text course ")
